@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Creig OS — Zero Trust Desk</title>
+<style>
+  :root { --bg:#0e1116; --panel:#171c24; --line:#2a3340; --text:#e8eef6; --muted:#8b98a8; --ok:#3dd68c; --warn:#f5c451; --stop:#ff5d5d; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: ui-sans-serif, system-ui, sans-serif; background:var(--bg); color:var(--text); line-height:1.45; }
+  header { padding:20px 18px 8px; border-bottom:1px solid var(--line); }
+  h1 { font-size:22px; margin:0 0 4px; }
+  .sub, .muted { color:var(--muted); }
+  main { padding:16px; display:grid; gap:14px; }
+  section { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:14px; }
+  h2 { font-size:15px; margin:0 0 10px; }
+  .pills { display:flex; flex-wrap:wrap; gap:8px; }
+  .pill { border:1px solid var(--line); border-radius:999px; padding:6px 10px; font-size:13px; }
+  .ok { color:var(--ok); border-color:#245c40; }
+  .warn { color:var(--warn); border-color:#6a5420; }
+  .stop { color:var(--stop); border-color:#6d2c2c; }
+  table { width:100%; border-collapse:collapse; font-size:13px; }
+  td, th { text-align:left; padding:7px 4px; border-bottom:1px solid var(--line); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Creig OS</h1>
+  <div class="sub">Desk is on GitHub. Worker runs on the laptop. Send is off.</div>
+</header>
+<main>
+  <section>
+    <h2>Not running yet</h2>
+    <p>This page is the desk. It does not open Gmail by itself.</p>
+    <div class="pills">
+      <span class="pill ok">Allowed: read, draft, log</span>
+      <span class="pill warn">Needs you: send</span>
+      <span class="pill stop">Blocked: password, pay, delete</span>
+    </div>
+  </section>
+  <section>
+    <h2>First job</h2>
+    <p>Open Gmail, find the newest unread customer email, save a draft, do not send.</p>
+    <p class="muted">On the laptop: python worker/draft_gmail.py</p>
+  </section>
+  <section>
+    <h2>Warden</h2>
+    <table>
+      <tr><th>Action</th><th>Rule</th></tr>
+      <tr><td>Open Gmail</td><td>Allow</td></tr>
+      <tr><td>Draft a reply</td><td>Allow</td></tr>
+      <tr><td>Send</td><td>Hold</td></tr>
+      <tr><td>Password or pay</td><td>Block</td></tr>
+    </table>
+  </section>
+</main>
+</body>
+</html>
